@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +6,183 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(./images/cloud2.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cloudy {
+  background-image: url('./images/cloudy.jpeg');
+}
+
+.clear {
+  background-image: url('./images/clear.jpeg');
+}
+
+.rain {
+  background-image: url('./images/Rain.png');
+}
+
+.mist {
+  background-image: url('./images/mist.jpeg');
+}
+
+.snow {
+  background-image: url('./images/snow.jpeg');
+}
+
+.search{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+}
+
+.search #myInput{
+  padding: 10px 15px;
+  border-radius: 30px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 20%;
+}
+
+.search #myBtn{
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px 12px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(254, 254, 254);
+  cursor: pointer;
+}
+
+.search{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin-top: 50px;
+}
+
+.error-message {
+  color: rgb(255, 0, 0);
+  font-size: 20px;
+  margin-top: 10%;
+  text-align: center;
+}
+
+.error{
+  display: none;
+}
+
+/* .no-result{
+  display: flex;
+  position: relative;
+  top: 200px;
+  height: 80%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-result span{
+  color: purple;
+  font-size: 15px;
+  text-decoration: underline;
+  cursor: pointer;
+} */
+
+.top{
+  padding-top: 190px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+
+}
+
+.top .location{
+  font-size: 30px;
+  margin-right: 25px;
+}
+
+.top .temperature{
+  font-size: 38px;
+}
+
+.App .bottom{
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly ;
+  margin: 1rem auto;
+  background-color: rgba(115, 115, 115, 0.3);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.feelsLike{
+  font-size: 25px;
+  margin-right: 30px;
+}
+
+.humidity{
+  font-size: 25px;
+}
+
+.windSpeed{
+  font-size: 25px;
+  margin-left: 30px;
+}
+
+.weather-container{
+  display: none;
+}
+
+@media screen and (max-width: 1111px) {
+  .App{
+    background-image: url(./images/cloud.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:initial;
+    height: 100%;
+  }
+ .search #myInput{
+    width: 60%;
+}
+
+  .humidity, .windSpeed, .feelsLike{
+    font-size: 1.2rem;
+  }
+
+  .weather-container .bottom{
+    width: 80%; 
+  }
+
+  .top .temperature{
+    font-size: 25px;
+  }
+  .top .temperature, .location{
+    margin-top: 7%;
+    margin-bottom: 10%;
+  }
+  .no-result h3{
+    font-size: 13px;
+  }
+  .error-message{
+    color: white;
+  }
+}
+
+@media screen and (max-width: 350px)
+{
+  .weather-container .bottom{
+    width: 100%;
+    height: 100%;
+  }
 }
