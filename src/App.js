@@ -7,8 +7,6 @@ function App() {
   const [inputCity, setinputCity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [backgroundImage, setBackgroundImage] = useState("");
-
 
   const handleChangeInput = (e) => {
     setinputCity(e.target.value);
@@ -27,14 +25,11 @@ function App() {
       setError(""); 
       document.querySelector(".weather-container").style.display = "block";
       document.querySelector(".error").style.display = "none";
-      setBackgroundImage(getBackgroundImage(resJson.weather[0].main));
-
     } else {
       setData(null);
       setError("Invalid city name"); 
       document.querySelector(".weather-container").style.display = "none";
       document.querySelector(".error").style.display = "block";
-      setBackgroundImage("");
     }
 
     setIsLoading(false); 
@@ -46,27 +41,8 @@ function App() {
     }
   };
 
-  const getBackgroundImage = (weatherMain) => {
-    switch (weatherMain) {
-      case "Clouds":
-        return "./images/cloudy.jpeg";
-      case "Clear":
-        return "./images/clear.jpeg";
-      case "Rain":
-        return "./images/Rain.png";
-      case "Mist":
-        return "./images/mist.jpeg";
-      case "Snow":
-        return "./images/snow.jpeg";
-      default:
-        return "";
-    }
-  };
-
-  // console.log(getBackgroundImage);
-
   return (
-    <div className={`App ${backgroundImage}`}>
+    <div className="App">
       <div className="search">
         <input
           type="text"
@@ -77,10 +53,10 @@ function App() {
         <button id="myBtn" onClick={weatherdetails} disabled={isLoading}>
           Search
         </button>
-        
 
         {isLoading && <Waveform size={25} color="white"/>}
       </div>
+      
       <div className="error">
       {error && <p className="error-message">{error}</p>}
       </div>

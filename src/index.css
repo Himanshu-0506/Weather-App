@@ -16,26 +16,7 @@ body{
   background-image: url(./images/cloud2.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.cloudy {
-  background-image: url('./images/cloudy.jpeg');
-}
-
-.clear {
-  background-image: url('./images/clear.jpeg');
-}
-
-.rain {
-  background-image: url('./images/Rain.png');
-}
-
-.mist {
-  background-image: url('./images/mist.jpeg');
-}
-
-.snow {
-  background-image: url('./images/snow.jpeg');
+  height: 100%;
 }
 
 .search{
@@ -74,7 +55,7 @@ body{
 .error-message {
   color: rgb(255, 0, 0);
   font-size: 20px;
-  margin-top: 10%;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -82,29 +63,11 @@ body{
   display: none;
 }
 
-/* .no-result{
-  display: flex;
-  position: relative;
-  top: 200px;
-  height: 80%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.no-result span{
-  color: purple;
-  font-size: 15px;
-  text-decoration: underline;
-  cursor: pointer;
-} */
-
 .top{
   padding-top: 190px;
   display: flex;
   align-items: center;
   justify-content:center;
-
 }
 
 .top .location{
@@ -144,14 +107,14 @@ body{
   display: none;
 }
 
-@media screen and (max-width: 1111px) {
-  .App{
+@media (max-width: 875px) {
+  body{
     background-image: url(./images/cloud.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position:initial;
     height: 100%;
   }
+  
  .search #myInput{
     width: 60%;
 }
@@ -167,19 +130,19 @@ body{
   .top .temperature{
     font-size: 25px;
   }
+
   .top .temperature, .location{
     margin-top: 7%;
     margin-bottom: 10%;
   }
-  .no-result h3{
-    font-size: 13px;
-  }
+
   .error-message{
     color: white;
+    background: transparent;
   }
 }
 
-@media screen and (max-width: 350px)
+@media (max-width: 350px)
 {
   .weather-container .bottom{
     width: 100%;
